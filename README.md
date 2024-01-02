@@ -23,7 +23,7 @@ build = {
     type = "rust-build",
     binary = "binary@1.0.0",
 }
-    ```
+```
 
 For user convenience it may make sense to pack your rocks as [binary rocks](https://github.com/luarocks/luarocks/wiki/Hosting-binary-rocks) to save the user
 the compilation hassle.
