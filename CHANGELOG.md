@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/vhyrro/luarocks-build-rust-binary/compare/v1.0.1...v1.0.2) (2024-01-03)
+
+
+### Bug Fixes
+
+* create LICENSE ([40f2f7d](https://github.com/vhyrro/luarocks-build-rust-binary/commit/40f2f7da4aed7a5cbcb6fd129957fd3c71e0cb0c))
+
 ## [1.0.1](https://github.com/vhyrro/luarocks-build-rust-binary/compare/v1.0.0...v1.0.1) (2024-01-03)
 
 
