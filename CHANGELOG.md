@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/vhyrro/luarocks-build-rust-binary/compare/v1.0.0...v1.0.1) (2024-01-03)
+
+
+### Bug Fixes
+
+* CI issues ([e79e0d0](https://github.com/vhyrro/luarocks-build-rust-binary/commit/e79e0d03a2597308b71def5c63850f1851f544ae))
+
 ## 1.0.0 (2024-01-03)
 
 
