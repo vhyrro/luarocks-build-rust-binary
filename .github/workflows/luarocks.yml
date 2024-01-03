@@ -4,6 +4,8 @@ name: Publish to Luarocks
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   create:
+  workflow_dispatch:
+
 jobs:
   # This workflow contains a single job called "build"
   luarocks-upload:
