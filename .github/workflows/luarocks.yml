@@ -1,0 +1,29 @@
+name: Publish to Luarocks
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  create:
+jobs:
+  # This workflow contains a single job called "build"
+  luarocks-upload:
+    if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Required to count the commits
+      - name: Get Version
+        run: echo "LUAROCKS_VERSION=$(git describe --abbrev=0 --tags)" >> $GITHUB_ENV
+      - name: LuaRocks Upload
+        uses: nvim-neorocks/luarocks-tag-release@v5
+        env:
+          LUAROCKS_API_KEY: ${{ secrets.LUAROCKS_API_KEY }}
+        with:
+          version: ${{ env.LUAROCKS_VERSION }}
+          test_interpreters: ""
+          labels: |
+            rust
+          detailed_description:
+            A module for compiling any arbitrary binary from crates.io by using cargo install under the hood.
+            The compiled binary is placed into the appropriate location under a bin/ subdirectory.
