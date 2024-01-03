@@ -2,7 +2,7 @@
 
 This module allows users to compile any arbitrary binary from `crates.io` by using `cargo install`
 under the hood. 
-The compiled binary is placed into the appropriate location under a `bin/` subdirectory.
+The compiled binary is placed into a `bin/` subdirectory in the luarocks tree.
 
 # Usage
 
@@ -12,6 +12,7 @@ Within your rockspec supply the following build step:
 build = {
     type = "rust-build",
     binary = "<binary name>",
+    copy_directories = { --[[ Any custom directories (e.g. "doc") ]], "bin" },
 }
 ```
 
@@ -22,6 +23,7 @@ like to install a specific version of the binary, set `binary` to the following 
 build = {
     type = "rust-build",
     binary = "binary@1.0.0",
+    copy_directories = { "bin" },
 }
 ```
 

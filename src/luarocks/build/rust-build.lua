@@ -40,30 +40,6 @@ function rust_build.run(rockspec)
         return nil, "Installation failed."
     end
 
-    local ext = cfg.external_deps_patterns.bin
-
-    local bin_dir = path.bin_dir(rockspec.name, rockspec.version)
-    local ok, err = fs.make_dir(bin_dir)
-
-    if not ok then
-        return nil, "Failed to create installation directory: " .. err
-    end
-
-    for _, extension in ipairs(ext) do
-        extension = extension:match("^.*%?(%..+)$")
-
-        local binary_path = dir.path("bin", rockspec.build.binary, extension)
-
-        if fs.exists(binary_path) then
-
-            ok, err = fs.copy(binary_path, dir.path(bin_dir, rockspec.build.binary, extension), "exec")
-
-            if not ok then
-                return nil, "Failed installing " .. binary_path .. " in " .. bin_dir .. ": " .. err
-            end
-        end
-    end
-
     return true
 end
 
