@@ -10,7 +10,7 @@ Within your rockspec supply the following build step:
 
 ```lua
 build = {
-    type = "rust-build",
+    type = "rust-binary",
     binary = "<binary name>",
     copy_directories = { --[[ Any custom directories (e.g. "doc") ]], "bin" },
 }
@@ -21,7 +21,7 @@ like to install a specific version of the binary, set `binary` to the following 
 `1.0.0` with your preferred version):
 ```lua
 build = {
-    type = "rust-build",
+    type = "rust-binary",
     binary = "binary@1.0.0",
     copy_directories = { "bin" },
 }

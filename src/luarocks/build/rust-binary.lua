@@ -2,13 +2,13 @@
 -- as a template!
 
 local fs = require("luarocks.fs")
-local cfg = require("luarocks.core.cfg")
-local dir = require("luarocks.dir")
-local path = require("luarocks.path")
+-- local cfg = require("luarocks.core.cfg")
+-- local dir = require("luarocks.dir")
+-- local path = require("luarocks.path")
 
 local rust_build = {}
 
-function rust_build.run(rockspec)
+function rust_build.run(rockspec, _)
     assert(rockspec:type() == "rockspec")
 
     if not fs.is_tool_available("cargo", "Cargo") then
