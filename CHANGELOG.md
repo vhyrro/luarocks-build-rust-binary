@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/vhyrro/luarocks-build-rust-binary/compare/v2.0.0...v3.0.0) (2024-02-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* change build step name to `rust-binary` to make luarocks work
+
+### Code Refactoring
+
+* change build step name to `rust-binary` to make luarocks work ([f3c333d](https://github.com/vhyrro/luarocks-build-rust-binary/commit/f3c333de2c14ab625844df6511fc75c8aa6a1f45))
+
 ## [2.0.0](https://github.com/vhyrro/luarocks-build-rust-binary/compare/v1.0.2...v2.0.0) (2024-01-03)
 
 
