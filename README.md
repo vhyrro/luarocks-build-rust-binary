@@ -12,7 +12,6 @@ Within your rockspec supply the following build step:
 build = {
     type = "rust-binary",
     binary = "<binary name>",
-    copy_directories = { --[[ Any custom directories (e.g. "doc") ]], "bin" },
 }
 ```
 
@@ -23,7 +22,6 @@ like to install a specific version of the binary, set `binary` to the following 
 build = {
     type = "rust-binary",
     binary = "binary@1.0.0",
-    copy_directories = { "bin" },
 }
 ```
 

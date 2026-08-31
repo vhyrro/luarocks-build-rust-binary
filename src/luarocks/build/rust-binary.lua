@@ -2,6 +2,7 @@
 -- as a template!
 
 local fs = require("luarocks.fs")
+local builtin_build = require("luarocks.build.builtin")
 -- local cfg = require("luarocks.core.cfg")
 -- local dir = require("luarocks.dir")
 -- local path = require("luarocks.path")
@@ -39,6 +40,9 @@ function rust_build.run(rockspec, _)
     if not fs.execute(table.concat(cmd, " ")) then
         return nil, "Installation failed."
     end
+
+    local _, install, _ = builtin_build.autodetect_modules({}, {}, {})
+    rockspec.build.install = rockspec.build.install or install
 
     return true
 end
