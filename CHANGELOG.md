@@ -1,5 +1,22 @@
 # Changelog
 
+## [4.0.0](https://github.com/vhyrro/luarocks-build-rust-binary/compare/v3.0.0...v4.0.0) (2026-09-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* install from source, not crates.io
+
+### Features
+
+* auto-detect installed binaries ([917f19d](https://github.com/vhyrro/luarocks-build-rust-binary/commit/917f19d4f94c8050d6db75179a730ec864903fc7))
+* install from source, not crates.io ([57efdcf](https://github.com/vhyrro/luarocks-build-rust-binary/commit/57efdcf956562c7f938917c7594b3de279d01c1f))
+
+
+### Bug Fixes
+
+* **rockspec:** use correct URL ([7164a68](https://github.com/vhyrro/luarocks-build-rust-binary/commit/7164a68d21a2942da9e7c9bfc37806d2717ed877))
+
 ## [3.0.0](https://github.com/vhyrro/luarocks-build-rust-binary/compare/v2.0.0...v3.0.0) (2024-02-16)
 
 
