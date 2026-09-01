@@ -1,0 +1,5 @@
+result*
+.direnv
+.envrc
+.pre-commit-config.yaml
+https___*

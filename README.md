@@ -1,7 +1,6 @@
 # Rust Binary Bundler for Luarocks
 
-This module allows users to compile any arbitrary binary from `crates.io` by using `cargo install`
-under the hood. 
+This module compiles a Rust binary from the rock's source tree using `cargo install`.
 The compiled binary is placed into a `bin/` subdirectory in the luarocks tree.
 
 # Usage
@@ -11,17 +10,21 @@ Within your rockspec supply the following build step:
 ```lua
 build = {
     type = "rust-binary",
-    binary = "<binary name>",
+    package = "<cargo package name>", -- (optional)
 }
 ```
 
-Where `<binary name>` is any binary available on [`crates.io`](https://crates.io). If you would
-like to install a specific version of the binary, set `binary` to the following (replacing
-`1.0.0` with your preferred version):
+`package` is the name of the cargo package to build. It is only required when the
+source is a workspace containing multiple packages; for a single-package source it may be
+omitted and the source directory is used directly.
+
+You may also enable cargo features:
+
 ```lua
 build = {
     type = "rust-binary",
-    binary = "binary@1.0.0",
+    package = "<cargo package name>",
+    features = { "extra", "features" },
 }
 ```
 
@@ -30,5 +33,4 @@ the compilation hassle.
 
 # Known Limitations
 
-- Installing many binaries is not supported.
 - Installing to a custom directory is not yet supported.
